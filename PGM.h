@@ -56,6 +56,11 @@ private:
 
     void readFromFile(std::istream& is) {
         if(!is) {
+            height = 1;
+            width = 1;
+            image = new int*[height];
+            image[0] = new int[width];
+            image[0][0] = 0;
             return;
         }
         std::string row;

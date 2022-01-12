@@ -8,7 +8,8 @@ void printMenu() {
     std::cout << "2. Rotate the image -90 degrees\n";
     std::cout << "3. Rotate the image 90 degrees\n";
     std::cout << "4. Rotate the image 180 degrees\n";
-    std::cout << "5. Exit\n";
+    std::cout << "5. Negative the image\n";
+    std::cout << "6. Exit\n";
 }
 
 int main() {
@@ -21,7 +22,7 @@ int main() {
     PGMhelper helper;
     while (true) {
         printMenu();
-        std::cout << "Enter your choice(1, 2, 3, 4): ";
+        std::cout << "Enter your choice(1, 2, 3, 4, 5, 6): ";
         std::cin >> choice;
         switch (choice)
         {
@@ -43,6 +44,11 @@ int main() {
             helper.rotate(pgm, 180);
             pgm.print();
             break;
+        case 5:
+            pgm.print();
+            helper.negativeImage(pgm);
+            pgm.print();
+            break;
         default:
             return 0;
         }
@@ -58,5 +64,5 @@ int main() {
     // pgm.print();
     // helper.rotate(pgm, 180);
     // pgm.print();
-    
+
 }

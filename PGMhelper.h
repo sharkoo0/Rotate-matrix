@@ -21,7 +21,7 @@ private:
         
         pgm.setImage(image, rows, cols);
     }
-    
+
 public:
     void rotate(PGM& pgm, int degree) {
         switch (degree)
@@ -40,6 +40,15 @@ public:
             break;
         default:
             break;
+        }
+    }
+
+    void negativeImage(PGM& pgm) {
+        for (int i = 0; i < pgm.getHeight(); ++i) {
+            for (int j = 0; j < pgm.getWidth(); ++j) {
+                int newValue = 255 - pgm.getImage()[i][j];
+                pgm.getImage()[i][j] = newValue;
+            }
         }
     }
 };
